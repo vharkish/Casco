@@ -39,6 +39,7 @@
       font-weight: 400;
       line-height: 1.7;
       overflow-x: hidden;
+      width: 100%;
     }
 
     /* ══════════════════════════════════════
@@ -47,9 +48,10 @@
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
-      z-index: 200;
-      background: rgba(6,17,31,0.97);
+      z-index: 1000;
+      background: rgba(6,17,31,0.98);
       backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--white-10);
     }
 
     .header-top-trim {
@@ -59,8 +61,8 @@
 
     .header-info {
       background: rgba(10,25,41,0.95);
-      border-bottom: 1px solid var(--white-20);
-      padding: 1rem 2.5rem;
+      border-bottom: 1px solid var(--white-10);
+      padding: 0.75rem 1rem;
     }
 
     .header-info-inner {
@@ -68,30 +70,29 @@
       margin: 0 auto;
       display: flex;
       align-items: center;
-      justify-content: center; /* CENTERED */
+      justify-content: center;
       flex-wrap: wrap;
-      gap: 2.5rem;
+      gap: 1.5rem;
     }
 
     .hi-label {
-      font-size: 0.85rem;
+      font-size: 0.75rem;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 700;
-      margin-right: 8px;
+      margin-right: 5px;
       letter-spacing: 1px;
     }
 
     .hi-phone {
-      font-size: 1.6rem; /* BIGGER FONT */
+      font-size: 1.2rem;
       font-weight: 800;
       color: var(--gold-light);
       text-decoration: none;
-      letter-spacing: 0.04em;
     }
 
     .hi-email {
-      font-size: 1.15rem; /* BIGGER FONT */
+      font-size: 0.95rem;
       color: var(--white-90);
       text-decoration: none;
       font-weight: 500;
@@ -104,151 +105,172 @@
       background: rgba(212,168,75,0.18);
       border: 1px solid rgba(212,168,75,0.55);
       color: var(--gold-pale);
-      font-size: 0.68rem;
+      font-size: 0.65rem;
       font-weight: 700;
-      letter-spacing: 0.14em;
+      padding: 0.2rem 0.6rem;
       text-transform: uppercase;
-      padding: 0.25rem 0.75rem;
     }
 
     nav {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 0 2.5rem;
-      height: 68px;
+      padding: 0.5rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      min-height: 70px;
     }
 
-    .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
-    .nav-logo-img { height: 58px; width: auto; object-fit: contain; }
+    .nav-logo { display: flex; align-items: center; gap: 0.7rem; text-decoration: none; }
+    .nav-logo-img { height: 50px; width: auto; object-fit: contain; }
 
-    .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 800; color: var(--gold-light); }
-    .nav-brand-sub { font-size: 0.6rem; color: var(--white-70); text-transform: uppercase; letter-spacing: 0.2em; }
+    .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 800; color: var(--gold-light); line-height: 1.1; }
+    .nav-brand-sub { font-size: 0.55rem; color: var(--white-70); text-transform: uppercase; letter-spacing: 0.1em; }
 
-    .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
-    .nav-links a { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; color: var(--white-90); text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 1.2rem; list-style: none; }
+    .nav-links a { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; color: var(--white-90); text-decoration: none; transition: 0.3s; }
     .nav-links a:hover { color: var(--gold-light); }
 
-    .nav-cta { background: var(--gold); color: var(--navy); padding: 0.5rem 1.3rem; font-weight: 700; text-transform: uppercase; font-size: 0.78rem; border:none; cursor:pointer; border-radius: 2px;}
+    .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.5rem 1rem; font-weight: 700 !important; border-radius: 2px; }
 
+    /* Spacer to push content below fixed header */
     .header-spacer { height: 160px; }
 
     /* ══════════════════════════════════════
        HERO
     ══════════════════════════════════════ */
-    #hero { min-height: calc(100vh - 160px); position: relative; background: var(--navy); display: flex; align-items: center; }
+    #hero { min-height: 70vh; position: relative; background: var(--navy); display: flex; align-items: center; overflow: hidden;}
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 40%, #0F2236 0%, transparent 65%); }
     .roofline { position: absolute; top: 0; width: 100%; height: auto; opacity: 0.1; pointer-events: none; }
 
-    .hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 4rem 2.5rem; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
-    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; }
+    .hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 3rem 1.5rem; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center; }
+    h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
     h1 em { font-style: normal; color: var(--gold-light); display: block; }
 
-    .hero-desc { font-size: 1.05rem; color: var(--white-70); max-width: 500px; margin-bottom: 2rem; line-height: 1.85; }
+    .hero-desc { font-size: 1.1rem; color: var(--white-70); max-width: 550px; margin-bottom: 2rem; }
 
-    .btn-gold { background: var(--gold); color: var(--navy); padding: 0.9rem 2rem; font-weight: 700; text-decoration: none; text-transform: uppercase; display: inline-block; }
-    .btn-white { border: 2px solid var(--white); color: var(--white); padding: 0.9rem 2rem; text-decoration: none; text-transform: uppercase; display: inline-block; font-weight: 600; margin-left: 10px; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 15px; }
+    .btn-gold { background: var(--gold); color: var(--navy); padding: 1rem 2rem; font-weight: 700; text-decoration: none; text-transform: uppercase; display: inline-block; text-align: center;}
+    .btn-white { border: 2px solid var(--white); color: var(--white); padding: 1rem 2rem; text-decoration: none; text-transform: uppercase; display: inline-block; font-weight: 600; text-align: center;}
 
-    .hero-panel { background: var(--navy-mid); border: 3px solid var(--white); padding: 2.5rem; text-align: center; }
-    .hero-panel img { width: 190px; margin-bottom: 1.5rem; }
+    .hero-panel { background: var(--navy-mid); border: 3px solid var(--white); padding: 2rem; text-align: center; }
+    .hero-panel img { width: 150px; margin-bottom: 1.5rem; }
 
-    .hero-stats { display: flex; gap: 20px; margin-top: 30px; }
-    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--gold-light); font-weight: 800; }
-    .hero-stat-lbl { font-size: 0.62rem; text-transform: uppercase; color: var(--white-70); }
+    .hero-stats { display: flex; gap: 25px; margin-top: 30px; }
+    .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-light); font-weight: 800; }
+    .hero-stat-lbl { font-size: 0.65rem; text-transform: uppercase; color: var(--white-70); letter-spacing: 1px; }
 
     /* Trims */
-    .baseboard { display: flex; align-items: center; padding: 10px 0; max-width: 1280px; margin: 0 auto; }
-    .bl { flex: 1; height: 3px; background: var(--white); }
-    .bd { width: 10px; height: 10px; background: var(--gold); transform: rotate(45deg); margin: 0 10px; }
-    .qr { height: 6px; border-top: 2px solid var(--white); opacity: 0.3; }
+    .baseboard { display: flex; align-items: center; padding: 15px 0; max-width: 1280px; margin: 0 auto; }
+    .bl { flex: 1; height: 2px; background: var(--white-20); }
+    .bd { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); margin: 0 15px; }
+
+    /* ══════════════════════════════════════
+       SECTIONS GENERAL
+    ══════════════════════════════════════ */
+    section { padding: 5rem 1.5rem; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); text-align: center; margin-bottom: 3rem; }
+    h2 em { font-style: normal; color: var(--gold-light); }
 
     /* ══════════════════════════════════════
        PHOTO BANNER
     ══════════════════════════════════════ */
-    .photo-banner { display: grid; grid-template-columns: repeat(3, 1fr); height: 280px; }
-    .photo-banner-item { position: relative; overflow: hidden; border-right: 3px solid var(--white); }
-    .photo-banner-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); }
-    .pb-label { position: absolute; bottom: 20px; left: 20px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; font-size: 0.75rem; }
+    .photo-banner { display: grid; grid-template-columns: repeat(3, 1fr); height: 300px; }
+    .photo-banner-item { position: relative; overflow: hidden; border-right: 2px solid var(--white-10); }
+    .photo-banner-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: 0.5s; }
+    .photo-banner-item:hover img { filter: brightness(0.8); transform: scale(1.05); }
+    .pb-label { position: absolute; bottom: 20px; left: 20px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
     /* ══════════════════════════════════════
        SERVICES
     ══════════════════════════════════════ */
-    #services { background: var(--navy-mid); padding: 5rem 2.5rem; }
-    .services-header { text-align: center; margin-bottom: 4rem; }
-    .pediment { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 1rem; }
-    .pediment-diamond { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); }
-    .pediment-line { width: 100px; height: 1px; background: var(--white-20); }
-
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1280px; margin: 0 auto; }
-    .service-card { background: var(--navy-card); border: 2px solid var(--white); overflow: hidden; }
-    .service-card-img { width: 100%; height: 190px; object-fit: cover; filter: brightness(0.6); }
-    .service-card-body { padding: 1.5rem; }
-    .service-card h3 { font-family: 'Playfair Display', serif; color: var(--white); margin-bottom: 0.5rem; }
-    .service-card p { font-size: 0.85rem; color: var(--white-70); }
-    .service-card ul { list-style: none; margin-top: 10px; }
-    .service-card ul li { font-size: 0.8rem; color: var(--white-70); }
-    .service-card ul li::before { content: "— "; color: var(--gold); }
+    #services { background: var(--navy-mid); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; max-width: 1280px; margin: 0 auto; }
+    .service-card { background: var(--navy-card); border: 1px solid var(--white-10); transition: 0.3s; }
+    .service-card:hover { border-color: var(--gold); }
+    .service-card-img { width: 100%; height: 220px; object-fit: cover; filter: brightness(0.7); }
+    .service-card-body { padding: 1.8rem; }
+    .service-card h3 { font-family: 'Playfair Display', serif; color: var(--gold-light); margin-bottom: 0.8rem; font-size: 1.4rem; }
+    .service-card p { font-size: 0.95rem; color: var(--white-70); }
 
     /* ══════════════════════════════════════
        ABOUT
     ══════════════════════════════════════ */
-    #about { padding: 5rem 2.5rem; }
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 1280px; margin: 0 auto; align-items: center; }
-    .about-frame-outer { padding: 12px; background: var(--white); position: relative; }
-    .about-frame-inner { background: var(--navy-lt); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
+    .about-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 4rem; max-width: 1280px; margin: 0 auto; align-items: center; }
+    .about-frame-outer { padding: 10px; background: var(--white); position: relative; max-width: 450px; margin: 0 auto; }
+    .about-frame-inner { background: var(--navy-lt); aspect-ratio: 4/5; overflow: hidden; }
     .about-frame-inner img { width: 100%; height: 100%; object-fit: cover; }
-    .about-nameplate { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); padding: 5px 20px; font-weight: 700; white-space: nowrap; }
-    .about-badge { position: absolute; top: -15px; right: -15px; width: 100px; height: 100px; background: var(--navy); border: 4px solid var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    .about-nameplate { position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); padding: 8px 25px; font-weight: 800; white-space: nowrap; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
 
-    /* Gallery row */
-    .gallery-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4px; height: 300px; margin-top: 4rem; }
-    .gallery-item { position: relative; overflow: hidden; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
+    .gallery-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 8px; height: 350px; margin-top: 5rem; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.8); }
 
     /* ══════════════════════════════════════
-       PROPERTIES
+       PROPERTIES & PROCESS
     ══════════════════════════════════════ */
-    #properties { background: var(--navy-mid); padding: 5rem 2.5rem; }
-    .properties-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 1280px; margin: 0 auto; }
-    .prop-card { border: 2px solid var(--white); background: var(--navy); text-align: center; }
-    .prop-card-img { width: 100%; height: 140px; object-fit: cover; filter: brightness(0.5); }
-    .prop-card-body { padding: 1.5rem; }
+    #properties { background: var(--navy-mid); }
+    .properties-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 1280px; margin: 0 auto; }
+    .prop-card { border: 1px solid var(--white-10); background: var(--navy); text-align: center; }
+    .prop-card-img { width: 100%; height: 160px; object-fit: cover; filter: brightness(0.6); }
+    .prop-card-body { padding: 1rem; }
+
+    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1100px; margin: 0 auto; position: relative; }
+    .step-circle { width: 60px; height: 60px; border-radius: 50%; border: 2px solid var(--gold); background: var(--navy); margin: 0 auto 15px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-weight: 800; font-size: 1.2rem; }
 
     /* ══════════════════════════════════════
-       PROCESS
+       CONTACT
     ══════════════════════════════════════ */
-    #process { padding: 5rem 2.5rem; text-align: center; }
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1280px; margin: 4rem auto 0; position: relative; }
-    .process-steps::before { content: ""; position: absolute; top: 28px; left: 10%; right: 10%; height: 2px; background: var(--white); z-index: 0; }
-    .step-circle { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--white); background: var(--navy); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; color: var(--gold-light); font-weight: 800; }
-
-    /* ══════════════════════════════════════
-       CONTACT FORM SECTION
-    ══════════════════════════════════════ */
-    #contact { background: var(--navy-mid); padding: 5rem 2.5rem; }
-    .contact-form { background: var(--navy); border: 3px solid var(--white); padding: 2.5rem; max-width: 600px; margin: 0 auto; position: relative; }
-    .form-group { margin-bottom: 1.2rem; display: flex; flex-direction: column; }
-    .form-group label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
-    .form-group input, .form-group select, .form-group textarea { background: #152535; border: 1px solid var(--white-20); padding: 12px; color: white; font-family: 'DM Sans', sans-serif; outline:none;}
-    .form-submit { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 15px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+    #contact { background: var(--navy-mid); }
+    .contact-form { background: var(--navy); border: 2px solid var(--white-20); padding: 2.5rem; max-width: 650px; margin: 0 auto; }
+    .form-group { margin-bottom: 1.5rem; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: #0A1929; border: 1px solid var(--white-20); padding: 14px; color: white; font-family: inherit; }
+    .form-submit { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 18px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+    .form-submit:hover { background: var(--gold-light); }
 
     /* ══════════════════════════════════════
        FOOTER
     ══════════════════════════════════════ */
-    footer { background: #030C17; padding: 3rem 2.5rem; border-top: 3px solid var(--gold); }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-    .footer-logo img { height: 44px; }
-    .footer-copy { font-size: 0.8rem; color: var(--white-70); }
+    footer { background: #030C17; padding: 4rem 1.5rem; border-top: 4px solid var(--gold); }
+    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 30px; }
+    .footer-logo img { height: 50px; }
+    .footer-copy { font-size: 0.85rem; color: var(--white-40); line-height: 1.8; }
+
+    /* ══════════════════════════════════════
+       MOBILE RESPONSIVE OVERRIDES
+    ══════════════════════════════════════ */
+    @media (max-width: 992px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-left { display: flex; flex-direction: column; align-items: center; }
+      .hero-desc { margin-left: auto; margin-right: auto; }
+      .hero-btns { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    }
 
     @media (max-width: 768px) {
-      .hero-inner, .about-grid, .services-grid, .properties-grid, .process-steps { grid-template-columns: 1fr; }
-      .photo-banner, .gallery-row { grid-template-columns: 1fr; height: auto; }
-      .header-info-inner { flex-direction: column; gap: 0.5rem; }
-      .header-spacer { height: 215px; }
+      /* Fix Jumbled Header */
+      .header-info { padding: 10px 5px; }
+      .header-info-inner { flex-direction: column; gap: 8px; text-align: center; }
       .hi-phone { font-size: 1.4rem; }
-      .hi-email { font-size: 1rem; }
+      
+      nav { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
+      .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
+      .nav-links a { font-size: 0.7rem; }
+      
+      .header-spacer { height: 260px; } /* Adjust for taller stacked header */
+
+      .photo-banner { grid-template-columns: 1fr; height: auto; }
+      .photo-banner-item { height: 200px; border-right: none; border-bottom: 2px solid var(--white-10); }
+
+      .gallery-row { grid-template-columns: 1fr; height: auto; gap: 10px; }
+      .gallery-item { height: 250px; }
+
+      .process-steps { grid-template-columns: 1fr; gap: 2rem; }
+      .process-steps::before { display: none; }
+      
+      .hero-stats { justify-content: center; }
+      
+      .footer-inner { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -274,7 +296,6 @@
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="projects.html">Projects</a></li>
       <li><a href="#contact" class="nav-cta">Free Quote</a></li>
     </ul>
   </nav>
@@ -284,70 +305,52 @@
 
 <section id="hero">
   <div class="hero-bg"></div>
-  <svg class="roofline" viewBox="0 0 1280 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-    <polyline points="0,260 0,180 180,180 180,110 250,50 320,110 320,150 430,150 430,80 510,20 590,80 590,130 640,130 640,80 720,20 800,80 800,150 910,150 910,110 980,50 1050,110 1050,180 1280,180 1280,260" fill="none" stroke="white" stroke-width="2"/>
-  </svg>
   <div class="hero-inner">
     <div class="hero-left">
       <h1>Superior Craftsmanship, <em>Built Into Every Home.</em></h1>
       <p class="hero-desc">David Casco and his expert crew deliver flawless painting, drywall, and flooring across Tampa Bay — from luxury condos to large commercial buildings.</p>
-      <div style="background:rgba(212,168,75,0.15); border:2px solid var(--gold); color:var(--gold-pale); display:inline-block; padding:10px 20px; font-weight:700; margin-bottom:20px;">
-        🇵🇷 Se Habla Español — Bilingual Service
-      </div><br>
-      <a href="tel:8133777092" class="btn-gold">📞 Call for Free Quote</a>
-      <a href="projects.html" class="btn-white" style="margin-left:10px;">View Projects</a>
+      
+      <div class="hero-btns">
+        <a href="tel:8133777092" class="btn-gold">📞 Call Now</a>
+        <a href="#services" class="btn-white">Our Services</a>
+      </div>
+
       <div class="hero-stats">
-        <div><span class="hero-stat-num">100+</span><br><span class="hero-stat-lbl">Homes Renovated</span></div>
-        <div><span class="hero-stat-num">10+</span><br><span class="hero-stat-lbl">Years Experience</span></div>
+        <div><span class="hero-stat-num">100+</span><br><span class="hero-stat-lbl">Projects</span></div>
+        <div><span class="hero-stat-num">10+</span><br><span class="hero-stat-lbl">Years Exp.</span></div>
       </div>
     </div>
     <div class="hero-panel">
       <img src="logo-1.jpg" alt="Logo">
       <div style="text-align:left;">
-        <p style="color:var(--gold-light); font-weight:700;">CONTACT DAVID CASCO</p>
-        <p style="font-size:1.3rem; font-weight:800; margin:10px 0;">813-377-7092</p>
-        <p style="color:var(--white-70);">Serving Tampa & All of Florida</p>
+        <p style="color:var(--gold-light); font-weight:700; font-size:0.8rem; text-transform:uppercase;">Contractor</p>
+        <p style="font-size:1.4rem; font-weight:800; margin:5px 0;">David Casco</p>
+        <p style="color:var(--white-70); font-size:0.9rem;">Licensed & Insured</p>
       </div>
     </div>
   </div>
-  <div class="baseboard"><div class="bl"></div><div class="bd"></div><div class="bl"></div><div class="bd"></div><div class="bl"></div></div>
 </section>
 
 <div class="photo-banner">
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700" alt="Painting"><div class="pb-label">🖌️ Interior Painting</div></div>
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500" alt="Drywall"><div class="pb-label">🏗️ Drywall Work</div></div>
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500" alt="Flooring"><div class="pb-label">🪵 LVP Flooring</div></div>
+  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700" alt="Painting"><div class="pb-label">Interior Painting</div></div>
+  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500" alt="Drywall"><div class="pb-label">Drywall Work</div></div>
+  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500" alt="Flooring"><div class="pb-label">LVP Flooring</div></div>
 </div>
 
 <section id="services">
-  <div class="services-header">
-    <div class="pediment"><div class="pediment-line"></div><div class="pediment-diamond"></div><div class="pediment-line"></div></div>
-    <h2>Our <em>Core Services</em></h2>
-  </div>
+  <h2>Our <em>Core Services</em></h2>
   <div class="services-grid">
     <div class="service-card">
       <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Painting</h3><p>Interior and exterior painting with flawless finishes.</p></div>
+      <div class="service-card-body"><h3>Painting</h3><p>High-end interior and exterior painting with professional prep and flawless finishes.</p></div>
     </div>
     <div class="service-card">
       <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Drywall</h3><p>Seamless installation and expert patch repairs.</p></div>
+      <div class="service-card-body"><h3>Drywall</h3><p>Seamless installation, expert patch repairs, and texture matching for any wall or ceiling.</p></div>
     </div>
     <div class="service-card">
       <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Flooring</h3><p>Professional LVP and Laminate installations.</p></div>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Remodeling</h3><p>Full interior transformations for every space.</p></div>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Commercial</h3><p>Build-outs and multi-unit apartment projects.</p></div>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Exterior</h3><p>Siding installation and concrete work.</p></div>
+      <div class="service-card-body"><h3>Flooring</h3><p>Specializing in LVP, laminate, and wood flooring installations for modern homes.</p></div>
     </div>
   </div>
 </section>
@@ -357,63 +360,52 @@
     <div class="about-frame-outer">
       <div class="about-frame-inner"><img src="david.jpg" alt="David Casco — Founder"></div>
       <div class="about-nameplate">David Casco — Founder</div>
-      <div class="about-badge"><span class="hero-stat-num">100+</span><span class="hero-stat-lbl">Homes</span></div>
     </div>
     <div>
-      <h2>Tampa's <em>Renovation Expert</em></h2>
-      <p>David Casco founded Casco Trade Solutions LLC to deliver the quality and reliability property owners deserve.</p>
-      <ul style="list-style:none; margin-top:20px;">
-        <li>🏆 Over 100 Florida Homes Renovated</li>
-        <li>⚡ Residential & Multi-Family Specialist</li>
-        <li>🤝 Reliable, On-Time, On-Budget</li>
-        <li>🇵🇷 Bilingual — Se Habla Español</li>
+      <h2 style="text-align:left; margin-bottom:1.5rem;">Tampa's <em>Renovation Expert</em></h2>
+      <p>David Casco founded Casco Trade Solutions LLC to provide high-quality trade services to Florida homeowners and property managers. With a focus on precision and reliability, we ensure every project is completed on time and exceeds expectations.</p>
+      <ul style="list-style:none; margin-top:20px; display: grid; gap: 10px;">
+        <li>✅ Over 100 Florida Homes Renovated</li>
+        <li>✅ Multi-Family & Apartment Specialist</li>
+        <li>✅ Reliable, On-Time, On-Budget</li>
+        <li>✅ Bilingual Service (Se Habla Español)</li>
       </ul>
     </div>
   </div>
   <div class="gallery-row">
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=500"></div>
-    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565538420870-da08ff96a207?w=500"></div>
-  </div>
-</section>
-
-<section id="properties">
-  <div class="properties-grid">
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Condos</h3></div></div>
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Townhomes</h3></div></div>
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Residential</h3></div></div>
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Apartments</h3></div></div>
-  </div>
-</section>
-
-<section id="process">
-  <div style="text-align:center;"><h2>Simple <em>4-Step Process</em></h2></div>
-  <div class="process-steps">
-    <div class="process-step"><div class="step-circle">01</div><h3>Consult</h3></div>
-    <div class="process-step"><div class="step-circle">02</div><h3>Quote</h3></div>
-    <div class="process-step"><div class="step-circle">03</div><h3>Build</h3></div>
-    <div class="process-step"><div class="step-circle">04</div><h3>Review</h3></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=800" alt="Work"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=500" alt="Work"></div>
+    <div class="gallery-item"><img src="https://images.unsplash.com/photo-1565538420870-da08ff96a207?w=500" alt="Work"></div>
   </div>
 </section>
 
 <section id="contact">
   <div class="contact-form">
-    <h2 style="font-family:'Playfair Display'; color:var(--gold-light); text-align:center; margin-bottom:2rem;">Free Estimate Request</h2>
+    <h2 style="color:var(--gold-light); margin-bottom:1rem;">Free Estimate</h2>
+    <p style="text-align:center; margin-bottom:2rem; color:var(--white-70);">Send us a message and David will get back to you shortly.</p>
     <form action="https://formspree.io/f/mgopnwog" method="POST">
-      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
-        <div class="form-group"><label>First Name</label><input type="text" name="first_name" required></div>
-        <div class="form-group"><label>Last Name</label><input type="text" name="last_name" required></div>
+      <div class="form-group">
+        <label>Full Name</label>
+        <input type="text" name="name" required placeholder="Your Name">
       </div>
-      <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" required></div>
-      <div class="form-group"><label>Email Address</label><input type="email" name="_replyto" required></div>
+      <div class="form-group">
+        <label>Phone Number</label>
+        <input type="tel" name="phone" required placeholder="(813) 000-0000">
+      </div>
       <div class="form-group">
         <label>Service Needed</label>
         <select name="service">
-          <option>Painting</option><option>Drywall</option><option>Flooring</option><option>Full Remodel</option>
+          <option>Painting</option>
+          <option>Drywall</option>
+          <option>Flooring</option>
+          <option>Full Remodel</option>
         </select>
       </div>
-      <div class="form-group"><label>Project Details</label><textarea name="message" rows="4"></textarea></div>
-      <button type="submit" class="form-submit">Send to David Casco →</button>
+      <div class="form-group">
+        <label>Project Details</label>
+        <textarea name="message" rows="4" placeholder="Tell us about your project..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Request →</button>
     </form>
   </div>
 </section>
@@ -423,10 +415,12 @@
     <div class="footer-logo"><img src="logo-1.jpg" alt="Logo"></div>
     <div class="footer-copy">
       © 2025 Casco Trade Solutions LLC · Tampa, Florida<br>
-      <span style="font-size:1.1rem; font-weight:700; color:var(--gold-light)">Call Us: <a href="tel:8133777092" style="color:inherit; text-decoration:none;">813-377-7092</a></span><br>
-      ✉️ vharkishz@gmail.com
+      Licensed & Insured · Serving All of Florida
     </div>
-    <div style="text-align:right;"><span style="color:var(--gold); font-weight:700;">Licensed & Insured</span><br>Serving All of Florida</div>
+    <div style="text-align:right;">
+      <a href="tel:8133777092" style="color:var(--gold-light); text-decoration:none; font-weight:800; font-size:1.2rem;">813-377-7092</a><br>
+      <span style="color:var(--white-40); font-size:0.8rem;">vharkishz@gmail.com</span>
+    </div>
   </div>
 </footer>
 
