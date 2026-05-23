@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Casco Trade Solutions LLC – Tampa's premier residential remodeling contractor. Expert painting, drywall, and flooring for condos, townhomes, and multi-family homes. David Casco. 813-377-7092. Se Habla Español."/>
+  <meta name="description" content="Casco Trade Solutions LLC – Tampa's premier residential remodeling contractor. Expert painting, drywall, and flooring. David Casco. 813-377-7092. Se Habla Español."/>
   <title>Casco Trade Solutions LLC | Tampa Remodeling, Painting & Flooring</title>
   
   <!-- FAVICON -->
@@ -60,7 +60,7 @@
     .header-info {
       background: rgba(10,25,41,0.95);
       border-bottom: 1px solid var(--white-20);
-      padding: 0.6rem 2.5rem; /* Slightly taller for bigger font */
+      padding: 0.8rem 2.5rem;
     }
 
     .header-info-inner {
@@ -70,12 +70,11 @@
       align-items: center;
       justify-content: center; /* CENTERED */
       flex-wrap: wrap;
-      gap: 2rem; /* Wider gap */
+      gap: 2.5rem;
     }
 
     .hi-label {
-      font-size: 0.75rem; /* Bigger label */
-      letter-spacing: 0.15em;
+      font-size: 0.8rem;
       text-transform: uppercase;
       color: var(--gold);
       font-weight: 700;
@@ -83,25 +82,19 @@
     }
 
     .hi-phone {
-      font-size: 1.25rem; /* BIGGER FONT */
+      font-size: 1.5rem; /* BIGGER FONT */
       font-weight: 800;
       color: var(--gold-light);
       text-decoration: none;
       letter-spacing: 0.04em;
-      transition: color 0.2s;
     }
-
-    .hi-phone:hover { color: var(--white); }
 
     .hi-email {
-      font-size: 1rem; /* BIGGER FONT */
+      font-size: 1.1rem; /* BIGGER FONT */
       color: var(--white-90);
       text-decoration: none;
-      transition: color 0.2s;
       font-weight: 500;
     }
-
-    .hi-email:hover { color: var(--gold-light); }
 
     .habla-pill {
       display: inline-flex;
@@ -129,7 +122,6 @@
 
     .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
     .nav-logo-img { height: 58px; width: auto; object-fit: contain; }
-
     .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 800; color: var(--gold-light); }
     .nav-brand-sub { font-size: 0.6rem; color: var(--white-70); text-transform: uppercase; letter-spacing: 0.2em; }
 
@@ -137,17 +129,16 @@
     .nav-links a { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; color: var(--white-90); text-decoration: none; }
     .nav-links a:hover { color: var(--gold-light); }
 
-    .nav-cta { background: var(--gold); color: var(--navy); padding: 0.5rem 1.3rem; font-weight: 700; text-transform: uppercase; font-size: 0.78rem; border:none; cursor:pointer;}
+    .nav-cta { background: var(--gold); color: var(--navy); padding: 0.5rem 1.3rem; font-weight: 700; text-transform: uppercase; font-size: 0.78rem; border-radius: 2px; }
 
-    /* Total header height = top-trim(3) + info-bar(~48) + nav(68) + bottom-trim(2) = ~121px */
-    .header-spacer { height: 121px; }
+    .header-spacer { height: 135px; }
 
     /* ══════════════════════════════════════
        HERO
     ══════════════════════════════════════ */
-    #hero { min-height: calc(100vh - 121px); position: relative; background: var(--navy); }
+    #hero { min-height: calc(100vh - 135px); position: relative; background: var(--navy); display: flex; align-items: center; }
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 40%, #0F2236 0%, transparent 65%); }
-    .roofline { position: absolute; top: 0; width: 100%; height: auto; opacity: 0.1; }
+    .roofline { position: absolute; top: 0; width: 100%; height: auto; opacity: 0.1; pointer-events: none; }
 
     .hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 4rem 2.5rem; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3rem; align-items: center; }
     h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; }
@@ -165,15 +156,10 @@
     .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 1.7rem; color: var(--gold-light); font-weight: 800; }
     .hero-stat-lbl { font-size: 0.62rem; text-transform: uppercase; color: var(--white-70); }
 
-    /* Trims */
-    .baseboard { display: flex; align-items: center; padding: 10px 0; max-width: 1280px; margin: 0 auto; }
-    .bl { flex: 1; height: 3px; background: var(--white); }
-    .bd { width: 10px; height: 10px; background: var(--gold); transform: rotate(45deg); margin: 0 10px; }
-
     /* ══════════════════════════════════════
        PHOTO BANNER
     ══════════════════════════════════════ */
-    .photo-banner { display: grid; grid-template-columns: repeat(3, 1fr); height: 280px; }
+    .photo-banner { display: grid; grid-template-columns: repeat(3, 1fr); height: 300px; border-top: 3px solid var(--white); }
     .photo-banner-item { position: relative; overflow: hidden; border-right: 3px solid var(--white); }
     .photo-banner-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); }
     .pb-label { position: absolute; bottom: 20px; left: 20px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; font-size: 0.75rem; }
@@ -188,14 +174,12 @@
     .pediment-line { width: 100px; height: 1px; background: var(--white-20); }
 
     .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1280px; margin: 0 auto; }
-    .service-card { background: var(--navy-card); border: 2px solid var(--white); overflow: hidden; }
+    .service-card { background: var(--navy-card); border: 2px solid var(--white); overflow: hidden; transition: 0.3s; }
+    .service-card:hover { border-color: var(--gold); transform: translateY(-5px); }
     .service-card-img { width: 100%; height: 190px; object-fit: cover; filter: brightness(0.6); }
     .service-card-body { padding: 1.5rem; }
     .service-card h3 { font-family: 'Playfair Display', serif; color: var(--white); margin-bottom: 0.5rem; }
     .service-card p { font-size: 0.85rem; color: var(--white-70); }
-    .service-card ul { list-style: none; margin-top: 10px; }
-    .service-card ul li { font-size: 0.8rem; color: var(--white-70); }
-    .service-card ul li::before { content: "— "; color: var(--gold); }
 
     /* ══════════════════════════════════════
        ABOUT
@@ -206,52 +190,33 @@
     .about-frame-inner { background: var(--navy-lt); aspect-ratio: 4/5; display: flex; align-items: center; justify-content: center; overflow: hidden; }
     .about-frame-inner img { width: 100%; height: 100%; object-fit: cover; }
     .about-nameplate { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy); padding: 5px 20px; font-weight: 700; white-space: nowrap; }
-    .about-badge { position: absolute; top: -15px; right: -15px; width: 100px; height: 100px; background: var(--navy); border: 4px solid var(--gold); border-radius: 50%; display: flex; flex-direction: column; align-items: center; justify-content: center; }
 
-    /* Gallery row */
     .gallery-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 4px; height: 300px; margin-top: 4rem; }
     .gallery-item { position: relative; overflow: hidden; }
     .gallery-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7); }
 
     /* ══════════════════════════════════════
-       PROPERTIES
-    ══════════════════════════════════════ */
-    #properties { background: var(--navy-mid); padding: 5rem 2.5rem; }
-    .properties-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; max-width: 1280px; margin: 0 auto; }
-    .prop-card { border: 2px solid var(--white); background: var(--navy); text-align: center; }
-    .prop-card-img { width: 100%; height: 140px; object-fit: cover; filter: brightness(0.5); }
-    .prop-card-body { padding: 1.5rem; }
-
-    /* ══════════════════════════════════════
-       PROCESS
-    ══════════════════════════════════════ */
-    #process { padding: 5rem 2.5rem; text-align: center; }
-    .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; max-width: 1280px; margin: 4rem auto 0; position: relative; }
-    .process-steps::before { content: ""; position: absolute; top: 28px; left: 10%; right: 10%; height: 2px; background: var(--white); z-index: 0; }
-    .step-circle { width: 56px; height: 56px; border-radius: 50%; border: 3px solid var(--white); background: var(--navy); margin: 0 auto 20px; display: flex; align-items: center; justify-content: center; position: relative; z-index: 1; color: var(--gold-light); font-weight: 800; }
-
-    /* ══════════════════════════════════════
-       CONTACT FORM SECTION
+       CONTACT FORM
     ══════════════════════════════════════ */
     #contact { background: var(--navy-mid); padding: 5rem 2.5rem; }
-    .contact-form { background: var(--navy); border: 3px solid var(--white); padding: 2.5rem; max-width: 600px; margin: 0 auto; position: relative; }
-    .form-group { margin-bottom: 1.2rem; display: flex; flex-direction: column; }
-    .form-group label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
-    .form-group input, .form-group select, .form-group textarea { background: #152535; border: 1px solid var(--white-20); padding: 12px; color: white; font-family: 'DM Sans', sans-serif; outline:none;}
-    .form-submit { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 15px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+    .contact-form { background: var(--navy); border: 3px solid var(--white); padding: 3rem; max-width: 650px; margin: 0 auto; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--gold); margin-bottom: 5px; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; background: #152535; border: 1px solid var(--white-20); padding: 12px; color: white; }
+    .form-submit { width: 100%; background: var(--gold); color: var(--navy); border: none; padding: 18px; font-weight: 800; text-transform: uppercase; cursor: pointer; transition: 0.3s; }
+    .form-submit:hover { background: var(--white); }
 
     /* ══════════════════════════════════════
        FOOTER
     ══════════════════════════════════════ */
-    footer { background: #030C17; padding: 3rem 2.5rem; border-top: 3px solid var(--gold); }
-    .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-    .footer-logo img { height: 44px; }
-    .footer-copy { font-size: 0.8rem; color: var(--white-70); }
+    footer { background: #030C17; padding: 4rem 2.5rem; border-top: 4px solid var(--gold); text-align: center; }
+    .footer-logo img { height: 60px; margin-bottom: 1.5rem; }
+    .footer-call { font-size: 1.8rem; font-weight: 800; color: var(--gold-light); text-decoration: none; display: block; margin: 10px 0; }
 
     @media (max-width: 960px) {
-      .hero-inner, .about-grid, .services-grid, .properties-grid, .process-steps { grid-template-columns: 1fr; }
+      .hero-inner, .about-grid, .services-grid, .process-steps { grid-template-columns: 1fr; }
       .photo-banner, .gallery-row { grid-template-columns: 1fr; height: auto; }
-      .header-info-inner { gap: 10px; }
+      .header-spacer { height: 180px; }
     }
   </style>
 </head>
@@ -268,7 +233,7 @@
   </div>
   <nav>
     <a href="index.html" class="nav-logo">
-      <img class="nav-logo-img" src="logo-1.jpg" alt="Casco Trade Solutions LLC" />
+      <img class="nav-logo-img" src="logo-1.jpg" alt="Logo" />
       <div class="nav-brand">
         <span class="nav-brand-name">Casco Trade Solutions</span><br>
         <span class="nav-brand-sub">LLC · Tampa, Florida</span>
@@ -293,34 +258,25 @@
   <div class="hero-inner">
     <div class="hero-left">
       <h1>Superior Craftsmanship, <em>Built Into Every Home.</em></h1>
-      <p class="hero-desc">David Casco and his expert crew deliver flawless painting, drywall, and flooring across Tampa Bay — from luxury condos to large commercial buildings.</p>
-      <div style="background:rgba(212,168,75,0.15); border:2px solid var(--gold); color:var(--gold-pale); display:inline-block; padding:10px 20px; font-weight:700; margin-bottom:20px;">
-        🇵🇷 Se Habla Español — Bilingual Service
-      </div><br>
+      <p class="hero-desc">Expert painting, drywall, and flooring across Tampa Bay. David Casco delivers premium results for residential and commercial property owners.</p>
       <a href="tel:8133777092" class="btn-gold">📞 Call for Free Quote</a>
       <a href="projects.html" class="btn-white">View Projects</a>
       <div class="hero-stats">
         <div><span class="hero-stat-num">100+</span><br><span class="hero-stat-lbl">Homes Renovated</span></div>
         <div><span class="hero-stat-num">10+</span><br><span class="hero-stat-lbl">Years Experience</span></div>
-        <div><span class="hero-stat-num">FL</span><br><span class="hero-stat-lbl">Statewide Service</span></div>
       </div>
     </div>
     <div class="hero-panel">
-      <img src="logo-1.jpg" alt="Logo">
-      <div style="text-align:left;">
-        <p style="color:var(--gold-light); font-weight:700;">CONTACT DAVID CASCO</p>
-        <p style="font-size:1.3rem; font-weight:800; margin:10px 0;">813-377-7092</p>
-        <p style="color:var(--white-70);">Serving Tampa & All of Florida</p>
-      </div>
+      <img src="logo-1.jpg" alt="Casco Logo">
+      <h3 style="color:var(--gold-light)">Trusted Tampa Remodeling</h3>
     </div>
   </div>
-  <div class="baseboard"><div class="bl"></div><div class="bd"></div><div class="bl"></div><div class="bd"></div><div class="bl"></div></div>
 </section>
 
 <div class="photo-banner">
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700" alt="Painting"><div class="pb-label">🖌️ Interior Painting</div></div>
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500" alt="Drywall"><div class="pb-label">🏗️ Drywall Work</div></div>
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500" alt="Flooring"><div class="pb-label">🪵 LVP Flooring</div></div>
+  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1589939705384-5185138a04b9?w=800" alt="Construction"><div class="pb-label">🏗️ Quality Trades</div></div>
+  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1503387762-592dea58ef21?w=800" alt="Interior"><div class="pb-label">🖌️ Interior Painting</div></div>
+  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800" alt="Flooring"><div class="pb-label">🪵 LVP Flooring</div></div>
 </div>
 
 <section id="services">
@@ -331,27 +287,15 @@
   <div class="services-grid">
     <div class="service-card">
       <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Painting</h3><p>Interior and exterior painting with flawless finishes.</p></div>
+      <div class="service-card-body"><h3>Painting</h3><p>Interior and exterior with flawless finishes.</p></div>
     </div>
     <div class="service-card">
       <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Drywall</h3><p>Seamless installation and expert patch repairs.</p></div>
+      <div class="service-card-body"><h3>Drywall</h3><p>Installation and expert patch repairs.</p></div>
     </div>
     <div class="service-card">
       <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Flooring</h3><p>Professional LVP and Laminate installations.</p></div>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Remodeling</h3><p>Full interior transformations for every space.</p></div>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Commercial</h3><p>Build-outs and multi-unit apartment projects.</p></div>
-    </div>
-    <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=600" class="service-card-img">
-      <div class="service-card-body"><h3>Exterior</h3><p>Siding installation and concrete work.</p></div>
+      <div class="service-card-body"><h3>Flooring</h3><p>Specializing in LVP and Laminate installations.</p></div>
     </div>
   </div>
 </section>
@@ -359,13 +303,12 @@
 <section id="about">
   <div class="about-grid">
     <div class="about-frame-outer">
-      <div class="about-frame-inner"><img src="https://images.unsplash.com/photo-1589939705384-5185138a04b9?w=800" alt="Worker"></div>
+      <div class="about-frame-inner"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800" alt="David"></div>
       <div class="about-nameplate">David Casco — Founder</div>
-      <div class="about-badge"><span class="hero-stat-num">100+</span><span class="hero-stat-lbl">Homes</span></div>
     </div>
     <div>
       <h2>Tampa's <em>Renovation Expert</em></h2>
-      <p>David Casco founded Casco Trade Solutions LLC to deliver the quality and reliability property owners deserve.</p>
+      <p>David Casco founded Casco Trade Solutions LLC to deliver high-quality trade solutions you can count on.</p>
       <ul style="list-style:none; margin-top:20px;">
         <li>🏆 Over 100 Florida Homes Renovated</li>
         <li>⚡ Residential & Multi-Family Specialist</li>
@@ -381,32 +324,13 @@
   </div>
 </section>
 
-<section id="properties">
-  <div class="properties-grid">
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Condos</h3></div></div>
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Townhomes</h3></div></div>
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Residential</h3></div></div>
-    <div class="prop-card"><img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400" class="prop-card-img"><div class="prop-card-body"><h3>Apartments</h3></div></div>
-  </div>
-</section>
-
-<section id="process">
-  <h2>Simple <em>4-Step Process</em></h2>
-  <div class="process-steps">
-    <div class="process-step"><div class="step-circle">01</div><h3>Consult</h3></div>
-    <div class="process-step"><div class="step-circle">02</div><h3>Quote</h3></div>
-    <div class="process-step"><div class="step-circle">03</div><h3>Build</h3></div>
-    <div class="process-step"><div class="step-circle">04</div><h3>Review</h3></div>
-  </div>
-</section>
-
 <section id="contact">
   <div class="contact-form">
-    <h2 style="font-family:'Playfair Display'; color:var(--gold-light); text-align:center; margin-bottom:2rem;">Free Estimate Request</h2>
-    <form action="https://formspree.io/f/xoqkyoyk" method="POST">
+    <h2 style="font-family:'Playfair Display'; text-align:center; color:var(--gold-light); margin-bottom:2rem;">Get a Free Quote</h2>
+    <form action="https://formspree.io/f/mgopnwog" method="POST">
       <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
-        <div class="form-group"><label>First Name</label><input type="text" name="first_name" required></div>
-        <div class="form-group"><label>Last Name</label><input type="text" name="last_name" required></div>
+        <div class="form-group"><label>First Name</label><input type="text" name="first" required></div>
+        <div class="form-group"><label>Last Name</label><input type="text" name="last" required></div>
       </div>
       <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" required></div>
       <div class="form-group"><label>Email Address</label><input type="email" name="_replyto" required></div>
@@ -416,21 +340,21 @@
           <option>Painting</option><option>Drywall</option><option>Flooring</option><option>Full Remodel</option>
         </select>
       </div>
-      <div class="form-group"><label>Project Details</label><textarea name="message" rows="4"></textarea></div>
-      <button type="submit" class="form-submit">Send to David Casco →</button>
+      <div class="form-group"><label>Project Notes</label><textarea name="message" rows="4"></textarea></div>
+      <button type="submit" class="form-submit">Send Message →</button>
     </form>
   </div>
 </section>
 
-<footer id="footer">
+<footer>
   <div class="footer-inner">
-    <div class="footer-logo"><img src="logo-1.jpg" alt="Logo"></div>
-    <div class="footer-copy">
-      © 2025 Casco Trade Solutions LLC · Tampa, Florida<br>
-      <span style="font-size:1.1rem; font-weight:700; color:var(--gold-light)">Call Us: <a href="tel:8133777092" style="color:inherit; text-decoration:none;">813-377-7092</a></span><br>
-      ✉️ cascocelio97@gmail.com
+    <img src="logo-1.jpg" alt="Logo">
+    <div style="margin:20px 0;">
+        <span class="hi-label">Call Us:</span>
+        <a href="tel:8133777092" class="footer-call">813-377-7092</a>
+        <p>cascocelio97@gmail.com</p>
     </div>
-    <div style="text-align:right;"><span style="color:var(--gold); font-weight:700;">Licensed & Insured</span><br>Serving All of Florida</div>
+    <p>© 2025 Casco Trade Solutions LLC · Tampa, Florida</p>
   </div>
 </footer>
 
