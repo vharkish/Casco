@@ -5,69 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Projects | Casco Trade Solutions LLC</title>
   <link rel="icon" type="image/jpeg" href="logo-1.jpg">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
   <style>
-    /* Reuse root and header/footer styles from index.html for perfect consistency */
-    :root { --navy: #06111F; --navy-mid: #0A1929; --gold: #D4A84B; --gold-light: #ECC96A; --white: #FFFFFF; }
-    body { background: var(--navy); color: var(--white); font-family: 'DM Sans', sans-serif; margin: 0; }
-    
-    header { background: rgba(6,17,31,0.97); border-bottom: 3px solid var(--gold); padding: 1rem 5%; position: sticky; top: 0; z-index: 100; text-align: center; }
-    .hi-phone { font-size: 1.4rem; font-weight: 800; color: var(--gold-light); text-decoration: none; }
-    .hi-label { font-size: 0.7rem; text-transform: uppercase; color: var(--gold); font-weight: 700; }
-    
-    .nav-container { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 10px auto; }
-    .nav-logo-img { height: 50px; }
-    nav a { color: white; text-decoration: none; margin-left: 20px; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #06111F; --navy-mid: #0A1929; --gold: #D4A84B; --gold-light: #ECC96A; --white: #FFFFFF;
+      --white-70: rgba(255,255,255,0.70); --white-20: rgba(255,255,255,0.20);
+    }
+    body { background: var(--navy); color: var(--white); font-family: 'DM Sans', sans-serif; line-height: 1.7; overflow-x: hidden; }
 
-    .hero { padding: 5rem 5%; text-align: center; }
-    h1 { font-family: 'Playfair Display', serif; font-size: 3rem; color: var(--gold-light); }
-    
+    /* EXACT HOMEPAGE HEADER */
+    header { position: fixed; top: 0; left: 0; right: 0; z-index: 200; background: rgba(6,17,31,0.97); backdrop-filter: blur(18px); }
+    .header-top-trim { height: 3px; background: linear-gradient(90deg, var(--gold), var(--white) 35%, var(--gold) 65%, var(--white)); }
+    .header-info { background: rgba(10,25,41,0.95); border-bottom: 1px solid var(--white-20); padding: 0.6rem 2.5rem; text-align: center; }
+    .hi-phone { font-size: 1.25rem; font-weight: 800; color: var(--gold-light); text-decoration: none; letter-spacing: 0.04em; }
+    .hi-label { font-size: 0.75rem; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-right: 8px; }
+    nav { max-width: 1280px; margin: 0 auto; padding: 0 2.5rem; height: 68px; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo-img { height: 58px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; font-weight: 500; text-transform: uppercase; color: var(--white-90); text-decoration: none; }
+    .header-spacer { height: 121px; }
+
+    .hero { padding: 5rem 5%; text-align: center; margin-top: 2rem; }
+    h1 { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--white); margin-bottom: 1rem; }
+    h1 em { font-style: normal; color: var(--gold-light); }
+
     .projects-grid { max-width: 1200px; margin: 0 auto 5rem; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; padding: 0 5%; }
-    .project-card { background: var(--navy-mid); border: 2px solid rgba(255,255,255,0.1); border-radius: 8px; overflow: hidden; text-align: center; transition: 0.3s; }
+    .project-card { background: var(--navy-mid); border: 2px solid var(--white-20); border-radius: 8px; overflow: hidden; transition: 0.3s; text-align: center; }
     .project-card:hover { border-color: var(--gold); transform: translateY(-5px); }
     .card-img { width: 100%; height: 220px; object-fit: cover; }
     .card-content { padding: 1.5rem; }
-    .view-btn { color: var(--gold); text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 0.8rem; border-bottom: 2px solid var(--gold); }
+    .card-content h3 { font-family: 'Playfair Display', serif; color: white; margin-bottom: 15px; }
+    .view-btn { color: var(--gold); text-decoration: none; font-weight: 700; text-transform: uppercase; border-bottom: 2px solid var(--gold); padding-bottom: 2px; }
 
-    footer { background: #030C17; padding: 3rem; text-align: center; border-top: 4px solid var(--gold); }
-    .footer-call { font-size: 1.5rem; font-weight: 800; color: var(--gold-light); text-decoration: none; }
+    footer { background: #030C17; padding: 4rem 2.5rem; border-top: 4px solid var(--gold); text-align: center; }
+    .footer-logo { height: 60px; margin-bottom: 1.5rem; }
+    @media (max-width: 768px) { .nav-links { display: none; } .header-spacer { height: 100px; } }
   </style>
 </head>
 <body>
 
 <header>
-  <div><span class="hi-label">Call:</span> <a href="tel:8133777092" class="hi-phone">813-377-7092</a></div>
-  <div class="nav-container">
-    <a href="index.html"><img src="logo-1.jpg" alt="Logo" class="nav-logo-img"></a>
-    <nav><a href="index.html">Home</a><a href="projects.html" style="color:var(--gold)">Projects</a></nav>
+  <div class="header-top-trim"></div>
+  <div class="header-info">
+    <div><span class="hi-label">Call:</span><a href="tel:8133777092" class="hi-phone">813-377-7092</a></div>
   </div>
+  <nav>
+    <a href="index.html"><img class="nav-logo-img" src="logo-1.jpg" alt="Casco Logo" /></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="projects.html" style="color:var(--gold-light)">Projects</a></li>
+    </ul>
+  </nav>
 </header>
 
+<div class="header-spacer"></div>
+
 <section class="hero">
-  <h1>Project Gallery</h1>
-  <p style="max-width: 700px; margin: 20px auto; color: rgba(255,255,255,0.7);">Superior trade solutions and remodeling results for Tampa property owners.</p>
+  <h1>Project <em>Gallery</em></h1>
+  <p style="color:var(--white-70); max-width: 700px; margin: 0 auto;">Superior trade solutions and remodeling results for Tampa property owners.</p>
 </section>
 
 <div class="projects-grid">
+    <!-- PROJECT 1 -->
     <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=500" class="card-img" alt="Townhouse">
-      <div class="card-content"><h3>Remodel Townhouse</h3><a href="remodel-townhouse-tampa.html" class="view-btn">View Before & After →</a></div>
+      <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600" class="card-img" alt="Townhouse">
+      <div class="card-content"><h3>Remodel Townhouse</h3><a href="remodel-townhouse-tampa.html" class="view-btn">View Before & After</a></div>
     </div>
+    <!-- PROJECT 2 -->
     <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1556912177-c54030639a4c?w=500" class="card-img" alt="Kitchen">
-      <div class="card-content"><h3>Kitchen Remodel</h3><a href="kitchen-remodel-tampa.html" class="view-btn">View Before & After →</a></div>
+        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=600" class="card-img" alt="Full Remodel">
+        <div class="card-content"><h3>Top to Bottom Remodel</h3><a href="remodel-top-to-bottom.html" class="view-btn">View Gallery</a></div>
     </div>
+    <!-- PROJECT 3 - FIXED IMAGE -->
     <div class="project-card">
-      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=500" class="card-img" alt="Bathroom">
-      <div class="card-content"><h3>Bathroom & Tub</h3><a href="bathroom-tub-remodel.html" class="view-btn">View Before & After →</a></div>
+      <img src="https://images.unsplash.com/photo-1556912177-c54030639a4c?w=600" class="card-img" alt="Kitchen">
+      <div class="card-content"><h3>Kitchen Remodel</h3><a href="kitchen-remodel-tampa.html" class="view-btn">View Before & After</a></div>
+    </div>
+    <!-- PROJECT 4 -->
+    <div class="project-card">
+      <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=600" class="card-img" alt="Bathroom">
+      <div class="card-content"><h3>Bathroom & Tub</h3><a href="bathroom-tub-remodel.html" class="view-btn">View Before & After</a></div>
+    </div>
+    <!-- PROJECT 5 -->
+    <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600" class="card-img" alt="Drywall">
+        <div class="card-content"><h3>Flooring & Drywall</h3><a href="flooring-drywall-specialists.html" class="view-btn">View Gallery</a></div>
     </div>
 </div>
 
 <footer>
-  <img src="logo-1.jpg" alt="Logo" style="height:50px; margin-bottom:15px;">
-  <p>© 2025 Casco Trade Solutions LLC</p>
-  <span class="hi-label" style="display:block; margin-top:15px;">Call Us:</span>
-  <a href="tel:8133777092" class="footer-call">813-377-7092</a>
+  <img src="logo-1.jpg" alt="Logo" class="footer-logo">
+  <p>© 2025 Casco Trade Solutions LLC · Tampa, Florida</p>
+  <p style="margin-top:15px; font-weight:700; font-size:1.2rem; color:var(--gold-light);">Call Us: 813-377-7092</p>
 </footer>
 
 </body>
