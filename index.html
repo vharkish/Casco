@@ -133,7 +133,6 @@
 
     .nav-cta { background: var(--gold); color: var(--navy) !important; padding: 0.5rem 1rem; font-weight: 700 !important; border-radius: 2px; }
 
-    /* Spacer to push content below fixed header */
     .header-spacer { height: 160px; }
 
     /* ══════════════════════════════════════
@@ -141,8 +140,7 @@
     ══════════════════════════════════════ */
     #hero { min-height: 70vh; position: relative; background: var(--navy); display: flex; align-items: center; overflow: hidden;}
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 25% 40%, #0F2236 0%, transparent 65%); }
-    .roofline { position: absolute; top: 0; width: 100%; height: auto; opacity: 0.1; pointer-events: none; }
-
+    
     .hero-inner { position: relative; z-index: 2; max-width: 1280px; margin: 0 auto; padding: 3rem 1.5rem; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 2rem; align-items: center; }
     h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; }
     h1 em { font-style: normal; color: var(--gold-light); display: block; }
@@ -160,9 +158,9 @@
     .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--gold-light); font-weight: 800; }
     .hero-stat-lbl { font-size: 0.65rem; text-transform: uppercase; color: var(--white-70); letter-spacing: 1px; }
 
-    /* Trims */
-    .baseboard { display: flex; align-items: center; padding: 15px 0; max-width: 1280px; margin: 0 auto; }
-    .bl { flex: 1; height: 2px; background: var(--white-20); }
+    /* Divider */
+    .baseboard { display: flex; align-items: center; padding: 30px 0; max-width: 1280px; margin: 0 auto; }
+    .bl { flex: 1; height: 1px; background: var(--white-10); }
     .bd { width: 8px; height: 8px; background: var(--gold); transform: rotate(45deg); margin: 0 15px; }
 
     /* ══════════════════════════════════════
@@ -171,15 +169,6 @@
     section { padding: 5rem 1.5rem; }
     h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); text-align: center; margin-bottom: 3rem; }
     h2 em { font-style: normal; color: var(--gold-light); }
-
-    /* ══════════════════════════════════════
-       PHOTO BANNER
-    ══════════════════════════════════════ */
-    .photo-banner { display: grid; grid-template-columns: repeat(3, 1fr); height: 300px; }
-    .photo-banner-item { position: relative; overflow: hidden; border-right: 2px solid var(--white-10); }
-    .photo-banner-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: 0.5s; }
-    .photo-banner-item:hover img { filter: brightness(0.8); transform: scale(1.05); }
-    .pb-label { position: absolute; bottom: 20px; left: 20px; font-weight: 700; color: var(--gold-light); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
 
     /* ══════════════════════════════════════
        SERVICES
@@ -237,7 +226,7 @@
     .footer-copy { font-size: 0.85rem; color: var(--white-40); line-height: 1.8; }
 
     /* ══════════════════════════════════════
-       MOBILE RESPONSIVE OVERRIDES
+       MOBILE RESPONSIVE
     ══════════════════════════════════════ */
     @media (max-width: 992px) {
       .hero-inner { grid-template-columns: 1fr; text-align: center; }
@@ -248,28 +237,16 @@
     }
 
     @media (max-width: 768px) {
-      /* Fix Jumbled Header */
-      .header-info { padding: 10px 5px; }
       .header-info-inner { flex-direction: column; gap: 8px; text-align: center; }
       .hi-phone { font-size: 1.4rem; }
-      
       nav { flex-direction: column; height: auto; padding: 15px; gap: 15px; }
       .nav-links { gap: 10px; flex-wrap: wrap; justify-content: center; }
-      .nav-links a { font-size: 0.7rem; }
-      
-      .header-spacer { height: 260px; } /* Adjust for taller stacked header */
-
-      .photo-banner { grid-template-columns: 1fr; height: auto; }
-      .photo-banner-item { height: 200px; border-right: none; border-bottom: 2px solid var(--white-10); }
+      .header-spacer { height: 260px; } 
 
       .gallery-row { grid-template-columns: 1fr; height: auto; gap: 10px; }
       .gallery-item { height: 250px; }
 
       .process-steps { grid-template-columns: 1fr; gap: 2rem; }
-      .process-steps::before { display: none; }
-      
-      .hero-stats { justify-content: center; }
-      
       .footer-inner { flex-direction: column; text-align: center; }
     }
   </style>
@@ -331,11 +308,8 @@
   </div>
 </section>
 
-<div class="photo-banner">
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700" alt="Painting"><div class="pb-label">Interior Painting</div></div>
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500" alt="Drywall"><div class="pb-label">Drywall Work</div></div>
-  <div class="photo-banner-item"><img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500" alt="Flooring"><div class="pb-label">LVP Flooring</div></div>
-</div>
+<!-- Divider Line -->
+<div class="baseboard"><div class="bl"></div><div class="bd"></div><div class="bl"></div></div>
 
 <section id="services">
   <h2>Our <em>Core Services</em></h2>
