@@ -42,7 +42,9 @@
       overflow-x: hidden;
     }
 
-    /* HEADER / NAV */
+    /* ══════════════════════════════════════
+       HEADER / NAV
+    ══════════════════════════════════════ */
     header {
       position: fixed;
       top: 0; left: 0; right: 0;
@@ -72,19 +74,8 @@
       gap: 0.5rem;
     }
 
-    .hi-phone {
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--gold-light);
-      text-decoration: none;
-      letter-spacing: 0.04em;
-    }
-
-    .hi-email {
-      font-size: 0.78rem;
-      color: var(--white-70);
-      text-decoration: none;
-    }
+    .hi-phone { font-size: 0.95rem; font-weight: 700; color: var(--gold-light); text-decoration: none; letter-spacing: 0.04em; }
+    .hi-email { font-size: 0.78rem; color: var(--white-70); text-decoration: none; }
 
     .habla-pill {
       display: inline-flex;
@@ -104,58 +95,29 @@
       max-width: 1280px;
       margin: 0 auto;
       padding: 0 2.5rem;
-      height: 85px; 
+      height: 75px;
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      text-decoration: none;
-    }
+    .nav-logo { display: flex; align-items: center; gap: 0.9rem; text-decoration: none; }
 
     .nav-logo-img {
-      height: 65px;
+      height: 58px;
       width: auto;
       object-fit: contain;
+      filter: drop-shadow(0 2px 8px rgba(212,168,75,0.35));
     }
 
     .nav-brand { display: flex; flex-direction: column; line-height: 1.2; }
+    .nav-brand-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 800; color: var(--gold-light); letter-spacing: 0.04em; }
+    .nav-brand-sub { font-size: 0.6rem; color: var(--white-70); letter-spacing: 0.22em; text-transform: uppercase; }
 
-    .nav-brand-name {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--gold-light);
-      letter-spacing: 0.04em;
-    }
-
-    .nav-brand-sub {
-      font-size: 0.6rem;
-      color: var(--white-70);
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 1.8rem;
-      list-style: none;
-    }
-
-    .nav-links a {
-      font-size: 0.78rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--white-90);
-      text-decoration: none;
-    }
-
+    .nav-links { display: flex; align-items: center; gap: 1.8rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white-90); text-decoration: none; transition: 0.2s; }
+    .nav-links a:hover { color: var(--gold-light); }
+    
     .nav-cta {
       background: var(--gold) !important;
       color: var(--navy) !important;
@@ -164,11 +126,13 @@
       border: 2px solid var(--gold) !important;
     }
 
-    .header-spacer { height: 126px; }
+    .header-spacer { height: 115px; }
 
-    /* HERO */
+    /* ══════════════════════════════════════
+       HERO
+    ══════════════════════════════════════ */
     #hero {
-      min-height: calc(100vh - 126px);
+      min-height: calc(100vh - 115px);
       display: flex;
       flex-direction: column;
       position: relative;
@@ -178,11 +142,10 @@
     .hero-bg {
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(ellipse 65% 70% at 25% 40%, #0F2236 0%, transparent 65%),
-        radial-gradient(ellipse 55% 55% at 90% 70%, rgba(212,168,75,0.06) 0%, transparent 55%),
-        var(--navy);
+      background: radial-gradient(ellipse 65% 70% at 25% 40%, #0F2236 0%, transparent 65%), var(--navy);
     }
+
+    .roofline { position: absolute; top: 0; left: 0; right: 0; width: 100%; height: auto; opacity: 0.1; pointer-events: none; }
 
     .hero-inner {
       position: relative;
@@ -190,7 +153,7 @@
       flex: 1;
       max-width: 1280px;
       margin: 0 auto;
-      padding: 4rem 2.5rem;
+      padding: 4rem 2.5rem 2rem;
       width: 100%;
       display: grid;
       grid-template-columns: 1.1fr 0.9fr;
@@ -201,23 +164,65 @@
     h1 { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.4rem; }
     h1 em { font-style: normal; color: var(--gold-light); display: block; }
 
-    .hero-panel { padding: 2.5rem; background: var(--navy-mid); border: 3px solid var(--white); position: relative; text-align: center; }
-    .hero-panel img { width: 220px; margin-bottom: 1.5rem; border-radius: 5px; }
+    .hero-desc { font-size: 1.05rem; color: var(--white-70); max-width: 500px; margin-bottom: 2rem; line-height: 1.85; }
 
-    .room-inner { max-width: 1280px; margin: 0 auto; padding: 5rem 2.5rem; }
-    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--gold);
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      padding: 0.9rem 2rem;
+      text-decoration: none;
+      border: 2px solid var(--gold);
+      transition: 0.2s;
+    }
+    .btn-gold:hover { background: transparent; color: var(--gold-light); }
+
+    .hero-panel {
+      position: relative;
+      padding: 2.5rem;
+      background: var(--navy-mid);
+      border: 3px solid var(--white);
+      text-align: center;
+    }
+    .hero-panel img { width: 190px; margin-bottom: 1.6rem; border-radius: 8px; }
+
+    /* ══════════════════════════════════════
+       PHOTO BANNER
+    ══════════════════════════════════════ */
+    .photo-banner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      height: 280px;
+      overflow: hidden;
+      border-top: 3px solid var(--gold);
+    }
+
+    .photo-banner-item { position: relative; overflow: hidden; }
+    .photo-banner-item img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.6); transition: 0.5s; }
+    .photo-banner-item:hover img { transform: scale(1.05); filter: brightness(0.8); }
+    .photo-banner-item .pb-label { position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(180deg, transparent, rgba(6,17,31,0.9)); padding: 1.5rem 1.2rem; font-weight: 700; color: var(--gold-light); text-transform: uppercase; font-size: 0.75rem; }
+
+    /* ══════════════════════════════════════
+       SERVICES
+    ══════════════════════════════════════ */
+    .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; max-width: 1280px; margin: 5rem auto; padding: 0 2.5rem; }
     .service-card { background: var(--navy-card); border: 2px solid var(--white); padding: 1.5rem; transition: 0.3s; }
     .service-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+    .service-card h3 { font-family: 'Playfair Display', serif; margin-bottom: 10px; color: var(--gold-light); }
+    .service-card p { font-size: 0.9rem; color: var(--white-70); }
 
-    .btn-gold { background: var(--gold); color: var(--navy); padding: 0.9rem 2rem; font-weight: 700; text-decoration: none; display: inline-block; text-transform: uppercase; font-size: 0.8rem; }
-    
-    footer { background: #030C17; padding: 3rem 0; border-top: 3px solid var(--gold); text-align: center; }
-    .footer-logo img { height: 60px; margin-bottom: 1rem; }
+    footer { background: #030C17; border-top: 3px solid var(--gold); padding: 4rem 2.5rem; text-align: center; }
+    .footer-logo img { height: 60px; margin-bottom: 1.5rem; }
 
-    /* Responsive */
     @media (max-width: 960px) {
-      .services-grid { grid-template-columns: 1fr 1fr; }
       .hero-inner { grid-template-columns: 1fr; }
+      .services-grid { grid-template-columns: 1fr 1fr; }
+      .photo-banner { height: 200px; }
     }
     @media (max-width: 768px) {
       .nav-links { display: none; }
@@ -227,14 +232,13 @@
 </head>
 <body>
 
-<!-- HEADER -->
 <header>
   <div class="header-top-trim"></div>
   <div class="header-info">
     <div class="header-info-inner">
       <div class="header-info-left">
         <a href="tel:8133777092" class="hi-phone">📞 813-377-7092</a>
-        <span style="color:rgba(255,255,255,0.3)"> | </span>
+        <span style="color:var(--white-20); margin: 0 10px;">|</span>
         <a href="mailto:cascocelio97@gmail.com" class="hi-email">cascocelio97@gmail.com</a>
       </div>
       <div class="habla-pill">🇵🇷 Se Habla Español</div>
@@ -242,8 +246,8 @@
   </div>
 
   <nav>
-    <a href="index.html" class="nav-logo">
-      <img src="logo-1.jpg" alt="Casco Trade Solutions Logo" class="nav-logo-img">
+    <a href="#" class="nav-logo">
+      <img class="nav-logo-img" src="logo-1.jpg" alt="Casco Trade Solutions LLC logo" />
       <div class="nav-brand">
         <span class="nav-brand-name">Casco Trade Solutions</span>
         <span class="nav-brand-sub">LLC · Tampa, Florida</span>
@@ -259,53 +263,78 @@
 
 <div class="header-spacer"></div>
 
-<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
+  <!-- Roofline SVG from original design -->
+  <svg class="roofline" viewBox="0 0 1280 260" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <polyline points="0,260 0,180 180,180 180,110 250,50 320,110 320,150 430,150 430,80 510,20 590,80 590,130 640,130 640,80 720,20 800,80 800,150 910,150 910,110 980,50 1050,110 1050,180 1280,180 1280,260"
+      fill="none" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+  </svg>
+
   <div class="hero-inner">
-    <div>
+    <div class="hero-left">
       <h1>Superior Craftsmanship, <em>Built Into Every Home.</em></h1>
-      <p style="margin-bottom: 2rem; color: var(--white-70);">Expert painting, drywall, and flooring across Tampa Bay. David Casco and his crew specialize in residential and commercial property transformations.</p>
-      <a href="tel:8133777092" class="btn-gold">Call for Free Quote</a>
+      <p class="hero-desc">David Casco and his expert crew deliver flawless painting, drywall, and flooring across Tampa Bay — from luxury condos to large commercial buildings.</p>
+      <div style="background:rgba(212,168,75,0.15); border:2px solid var(--gold); color:var(--gold-pale); display:inline-block; padding:10px 20px; font-weight:700; margin-bottom:20px;">
+        🇵🇷 Se Habla Español — Bilingual Service
+      </div>
+      <br>
+      <a href="tel:8133777092" class="btn-gold">📞 Call for Free Quote</a>
     </div>
-    
+
     <div class="hero-panel">
-      <img src="logo-1.jpg" alt="Casco Logo">
-      <h3 style="color:var(--gold); margin-bottom: 10px;">Contact David Casco</h3>
-      <p>📞 813-377-7092</p>
-      <p>✉️ cascocelio97@gmail.com</p>
-      <div style="background:var(--gold); color:var(--navy); margin-top:15px; padding:5px; font-weight:bold;">SE HABLA ESPAÑOL</div>
+      <!-- FIXED LOGO FILENAME -->
+      <img src="logo-1.jpg" alt="Casco Trade Solutions">
+      <div style="text-align:left;">
+        <p style="font-weight:700; color:var(--gold-light);">Contact David Casco</p>
+        <p style="font-size:1.2rem; font-weight:800; margin:10px 0;">813-377-7092</p>
+        <p style="color:var(--white-70);">Serving All of Florida</p>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- PHOTO BANNER -->
+<div class="photo-banner">
+  <div class="photo-banner-item">
+    <img src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=700&q=80&fit=crop" alt="Painting">
+    <div class="pb-label">🖌️ Interior Painting</div>
+  </div>
+  <div class="photo-banner-item">
+    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=500&q=80&fit=crop" alt="Drywall">
+    <div class="pb-label">🏗️ Drywall Work</div>
+  </div>
+  <div class="photo-banner-item">
+    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=500&q=80&fit=crop" alt="Flooring">
+    <div class="pb-label">🪵 LVP Flooring</div>
+  </div>
+</div>
+
 <!-- SERVICES -->
-<section id="services" class="room-inner">
-  <h2 style="text-align:center; margin-bottom: 3rem;">Our Core <em>Services</em></h2>
-  <div class="services-grid">
-    <div class="service-card">
-      <h3>🖌️ Painting</h3>
-      <p>Interior and exterior painting with flawless finishes and lasting quality.</p>
-    </div>
-    <div class="service-card">
-      <h3>🏗️ Drywall</h3>
-      <p>Seamless installation and expert repairs for any wall or ceiling project.</p>
-    </div>
-    <div class="service-card">
-      <h3>🪵 Flooring</h3>
-      <p>Specializing in LVP (Luxury Vinyl Plank) and laminate for modern durability.</p>
-    </div>
+<section id="services" class="services-grid">
+  <div class="service-card">
+    <h3>🖌️ Painting</h3>
+    <p>Flawless interior and exterior applications with proper prep and lasting results.</p>
+  </div>
+  <div class="service-card">
+    <h3>🏗️ Drywall</h3>
+    <p>Seamless installation and repairs—from new rooms to patch restorations.</p>
+  </div>
+  <div class="service-card">
+    <h3>🪵 Flooring</h3>
+    <p>Professional LVP and Laminate installation with proper subfloor preparation.</p>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contact">
+<footer>
   <div class="footer-logo">
+    <!-- FIXED LOGO FILENAME -->
     <img src="logo-1.jpg" alt="Casco Trade Solutions">
   </div>
   <p>© 2025 Casco Trade Solutions LLC · Tampa, Florida</p>
-  <p>David Casco | <a href="tel:8133777092" style="color:var(--gold); text-decoration:none;">813-377-7092</a></p>
-  <p>Se Habla Español</p>
+  <p style="color:var(--gold); font-weight:700; margin-top:10px;">813-377-7092</p>
+  <p>Licensed & Insured · Se Habla Español</p>
 </footer>
 
 </body>
